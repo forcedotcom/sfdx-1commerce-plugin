@@ -1,0 +1,11 @@
+{
+    "extends": "./node_modules/@salesforce/dev-config/tsconfig",
+    "compilerOptions": {
+        "allowJs": true,
+        "declaration": true,
+        "outDir": "lib",
+        "importHelpers": true,
+        "rootDirs": ["src"],
+  },
+    "include": [ "src/**/*" , "test/**/*"]
+}
