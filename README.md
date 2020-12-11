@@ -6,7 +6,7 @@ SDFX Commands for managing 1Commerce WebStores and Data
 ## Installing
 
 ```
-sfdx plugins:install sfdx-1commerce-plugin
+sfdx plugins:install https://github.com/forcedotcom/sfdx-1commerce-plugin
 ```
 
 ### Installing from source
