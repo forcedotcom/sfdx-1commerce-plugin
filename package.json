@@ -79,7 +79,7 @@
 	"build": "rimraf lib && tsc",
     "clean": "rimraf oclif.manifest.json; rimraf yarn-error.log; rimraf package-lock.json",
     "postpublish": "yarn run clean; git push; git push --tags",
-    "prepare": "yarn run build && oclif-dev manifest && yarn test:clean",
+    "prepare": "yarn run build && oclif-dev manifest",
     "prepublishOnly": "yarn run build && oclif-dev manifest",
     "preversion": "yarn run clean",
 	"test": "nyc --extension .ts mocha \"test/**/*.test.ts\"",
