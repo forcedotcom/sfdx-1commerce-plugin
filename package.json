@@ -1,7 +1,7 @@
 {
   "name": "sfdx-1commerce-plugin",
   "description": "1Commerce SFDX Commands",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "author": "Greg Smolyn",
   "bugs": "https://github.com/forcedotcom/sfdx-1commerce-plugin/issues",
   "dependencies": {

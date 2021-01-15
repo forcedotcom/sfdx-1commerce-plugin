@@ -1,11 +1,16 @@
 {
     "extends": "./node_modules/@salesforce/dev-config/tsconfig",
     "compilerOptions": {
-        "allowJs": true,
-        "declaration": true,
-        "outDir": "lib",
-        "importHelpers": true,
-        "rootDirs": ["src"],
-  },
-    "include": [ "src/**/*" , "test/**/*"]
+        "allowJs": false,
+        "lib": ["dom", "esNext"],
+        "outDir": "./lib",
+        "rootDirs": ["./src"],
+        "baseUrl": "./",
+        "paths": {
+            // "*": ["./node_modules/@salesforce/core/typings/*"]
+        },
+        "target": "ES6"
+    },
+    "include": ["./src/**/*"],
+    "exclude": ["./test/**", "./testProject*/**/*", "./test/**/*"]
 }
