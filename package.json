@@ -1,7 +1,7 @@
 {
   "name": "sfdx-1commerce-plugin",
   "description": "1Commerce SFDX Commands",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "author": "Greg Smolyn",
   "bugs": "https://github.com/forcedotcom/sfdx-1commerce-plugin/issues",
   "dependencies": {
@@ -67,8 +67,11 @@
     "bin": "sfdx",
     "topics": {
       "1commerce:search": {
-        "description": "things for search"
-      }
+        "description": "commands for search"
+      },
+	  "1commerce:import": {
+		"description": "commerce data import tools"
+	   }
     },
     "devPlugins": [
       "@oclif/plugin-help"
