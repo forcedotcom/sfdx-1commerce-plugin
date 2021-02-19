@@ -5,6 +5,5 @@
   "errorNoOrgResults": "No results found for the org '%s'.",
   "dataIdDescription":"ID of a file in FFX; CSV only for 230; JSON and XML (?) planned for the future. To be imported into the store",
   "webstoreIdDescription":"the ID of the webstore to import to, will fetch/create the defaults associated with this webstore if needed. This is or the name is required.",
-  "nameDescription":"The name of the webstore to import to that was created. This or the webstoreId is required",
-  "asyncDescription": "whether the import is to be done asynchronously or notDefaults to true in 232 (in 230 it won't be present)"
+  "nameDescription":"The name of the webstore to import to that was created. This or the webstoreId is required"
 }
