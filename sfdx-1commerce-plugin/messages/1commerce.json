@@ -1,0 +1,9 @@
+{
+  "commandDescription": "print a greeting and your org IDs",
+  "nameFlagDescription": "name to print",
+  "forceFlagDescription": "example boolean flag",
+  "errorNoOrgResults": "No results found for the org '%s'.",
+  "dataIdDescription":"ID of a file in FFX; CSV only for 230; JSON and XML (?) planned for the future. To be imported into the store",
+  "webstoreIdDescription":"the ID of the webstore to import to, will fetch/create the defaults associated with this webstore if needed. This is or the name is required.",
+  "nameDescription":"The name of the webstore to import to that was created. This or the webstoreId is required"
+}
