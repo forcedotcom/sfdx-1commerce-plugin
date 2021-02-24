@@ -1,45 +1,58 @@
-import { flags, SfdxCommand } from '@salesforce/command';
+import { flags, SfdxCommand } from "@salesforce/command";
 // import { Messages, SfdxError } from '@salesforce/core';
-import { AnyJson } from '@salesforce/ts-types';
-import { singleRecordQuery } from '../../../shared/queries';
+import { AnyJson } from "@salesforce/ts-types";
+import { singleRecordQuery } from "../../../shared/queries";
 
 export default class SearchIndex extends SfdxCommand {
+  public static description = "Start search indexing for a given webstore";
 
-    public static description = 'Start search indexing for a given webstore';
-
-    public static examples = [`sfdx 1commerce:search:start -n storeName
+  public static examples = [
+    `sfdx 1commerce:search:start -n storeName
 // Finds a store and indexes it
-`    ];
+`,
+  ];
 
-    protected static requiresUsername = true;
+  protected static requiresUsername = true;
 
-    protected static flagsConfig = {
-        name: flags.string({ char: 'n', description: 'name of webstore to index', exclusive: ['id'] }),
-        id: flags.string({ char: 'i', description: 'ID of webstore to index', exclusive: ['name'] })
-    };
+  protected static flagsConfig = {
+    name: flags.string({
+      char: "n",
+      description: "name of webstore to index",
+      exclusive: ["id"],
+    }),
+    id: flags.string({
+      char: "i",
+      description: "ID of webstore to index",
+      exclusive: ["name"],
+    }),
+  };
 
-    public async run(): Promise<AnyJson> {
-        const conn = this.org.getConnection();
+  public async run(): Promise<AnyJson> {
+    const conn = this.org.getConnection();
 
-        if (!this.flags.id && !this.flags.name) {
-            throw new Error('you have to supply either --id or --name');
-        }
-
-        let webStoreId = this.flags.id;
-        if (!webStoreId) {
-            webStoreId = (await singleRecordQuery({ conn, query: `select Id from WebStore where Name='${this.flags.name}'` })).Id;
-        }
-
-        this.ux.log(`Starting index for WebStore ID: ${webStoreId}`);
-
-        const startIndexResults = await conn.request({
-            method: 'POST',
-            url: `${conn.baseUrl()}/commerce/management/webstores/${webStoreId}/search/indexes`,
-            body: '{}'
-        });
-
-        this.ux.log(`Results: ${JSON.stringify(startIndexResults)}`);
-        return startIndexResults;
-
+    if (!this.flags.id && !this.flags.name) {
+      throw new Error("you have to supply either --id or --name");
     }
+
+    let webStoreId = this.flags.id;
+    if (!webStoreId) {
+      webStoreId = (
+        await singleRecordQuery({
+          conn,
+          query: `select Id from WebStore where Name='${this.flags.name}'`,
+        })
+      ).Id;
+    }
+
+    this.ux.log(`Starting index for WebStore ID: ${webStoreId}`);
+
+    const startIndexResults = await conn.request({
+      method: "POST",
+      url: `${conn.baseUrl()}/commerce/management/webstores/${webStoreId}/search/indexes`,
+      body: "{}",
+    });
+
+    this.ux.log(`Results: ${JSON.stringify(startIndexResults)}`);
+    return startIndexResults;
+  }
 }

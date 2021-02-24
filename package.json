@@ -46,7 +46,7 @@
     "nyc": "^15.1.0",
     "prettier": "^2.1.2",
     "ts-node": "^9.0.0",
-	"rimraf": "^3.0.0"
+    "rimraf": "^3.0.0"
   },
   "engines": {
     "node": ">=8.0.0"
@@ -69,9 +69,9 @@
       "1commerce:search": {
         "description": "commands for search"
       },
-	  "1commerce:import": {
-		"description": "commerce data import tools"
-	   }
+      "1commerce:import": {
+        "description": "commerce data import tools"
+      }
     },
     "devPlugins": [
       "@oclif/plugin-help"
@@ -79,15 +79,13 @@
   },
   "repository": "forcedotcom/sfdx-1commerce-plugin",
   "scripts": {
-	"build": "rimraf lib && tsc",
+    "build": "rimraf lib && tsc",
     "clean": "rimraf oclif.manifest.json; rimraf yarn-error.log; rimraf package-lock.json",
-    "postpublish": "yarn run clean; git push; git push --tags",
     "prepare": "yarn run build && oclif-dev manifest",
-    "prepublishOnly": "yarn run build && oclif-dev manifest",
     "preversion": "yarn run clean",
-	"test": "nyc --extension .ts mocha \"test/**/*.test.ts\"",
+    "test": "nyc --extension .ts mocha \"test/**/*.test.ts\"",
     "version": "oclif-dev readme && git add README.md",
-    "prettier": "prettier --write src/**/**/*.ts && prettier --write src/**/*.ts && prettier --write src/*.ts && prettier --write test/**/*.ts && prettier --write test/**/**/*.ts"
+    "prettier": "prettier --write \"**/*.(ts|json)\""
   },
   "eslintConfig": {
     "extends": [

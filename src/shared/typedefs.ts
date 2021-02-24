@@ -1,14 +1,11 @@
 interface Record {
-    Id: string;
+  Id: string;
 }
 
 interface QueryResult {
-    totalSize: number;
-    done: boolean;
-    records: Record[];
+  totalSize: number;
+  done: boolean;
+  records: Record[];
 }
 
-export {
-    Record,
-    QueryResult
-};
+export { Record, QueryResult };
