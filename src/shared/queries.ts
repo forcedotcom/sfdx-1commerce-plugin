@@ -1,6 +1,12 @@
-import { retry } from "@lifeomic/attempt";
-import { Connection } from "@salesforce/core";
-import { QueryResult, Record } from "./typedefs";
+/*
+ * Copyright (c) 2020, salesforce.com, inc.
+ * All rights reserved.
+ * Licensed under the BSD 3-Clause license.
+ * For full license text, see LICENSE.txt file in the repo root or https://opensource.org/licenses/BSD-3-Clause
+ */
+import { retry } from '@lifeomic/attempt';
+import { Connection } from '@salesforce/core';
+import { QueryResult, Record } from './typedefs';
 
 interface SingleRecordQueryInputs {
   conn: Connection;
@@ -14,7 +20,7 @@ const singleRecordQuery = async ({
   conn,
   query,
   returnChoices = false,
-  choiceField = "Name",
+  choiceField = 'Name',
   tooling = false,
 }: SingleRecordQueryInputs): Promise<Record> => {
   // const result = tooling ? ((await conn.tooling.query(query)) as QueryResult) : ((await conn.query(query)) as QueryResult);
@@ -31,18 +37,14 @@ const singleRecordQuery = async ({
     }
   )) as QueryResult;
 
-  if (result.totalSize === 0) {
+  if (result.totalSize === 0 || !result.records || result.records.length === 0) {
     throw new Error(`no records found for ${query}`);
   }
   if (result.totalSize > 1) {
     if (returnChoices) {
-      throw new Error(
-        `multiple records found: ${result.records
-          .map((record) => record[choiceField])
-          .join(",")}`
-      );
+      throw new Error(`multiple records found: ${result.records.map((record) => record[choiceField]).join(',')}`);
     }
-    throw new Error("the query returned more than 1 record");
+    throw new Error('the query returned more than 1 record');
   }
   return result.records[0];
 };
