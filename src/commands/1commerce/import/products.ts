@@ -14,7 +14,7 @@ const CMD = `${TOPIC}:import:products`;
 const DEFAULT_PATH = '/commerce/webstores/import';
 
 Messages.importMessagesDirectory(__dirname);
-const messages = Messages.loadMessages('sfdx-1commerce-plugin', TOPIC);
+const messages = Messages.loadMessages('@salesforce/plugin-1commerce', TOPIC);
 
 /**
  * Imports the Products in the CSV file Id provided for the webstore Id provided.
