@@ -1,16 +1,18 @@
-#sfdx-1commerce-plugin
+# @salesforce/plugin-1commerce
 =====================
 
-SDFX Commands for managing 1Commerce WebStores and Data
+Salesforce CLI Commands for managing 1Commerce WebStores and Data.
 
 ## Installing
 
-```
+Install from the repository directly:
+
+```bash
 sfdx plugins:install https://github.com/forcedotcom/sfdx-1commerce-plugin
 ```
 
 ### Installing from source
-1. Install the SDFX CLI.
+1. Install the Salesforce CLI.
 1. Clone the repository
 1. Install node_modules modules: `yarn install`
 1. Link the plugin: `sfdx plugins:link .`
