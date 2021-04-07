@@ -27,10 +27,10 @@ export class ImportProducts extends SfdxCommand {
   public static examples = [`$ sfdx ${CMD} -d 00Dxx0000000000 -w 00Dxx0000000000`];
 
   protected static flagsConfig = {
-    dataid: flags.string({
+    contentversionid: flags.string({
       char: 'd',
       required: true,
-      description: messages.getMessage('dataIdDescription'),
+      description: messages.getMessage('contentVersionIdDescription'),
     }),
     webstoreid: flags.string({
       char: 'w',
@@ -66,9 +66,9 @@ export class ImportProducts extends SfdxCommand {
       method: 'POST',
       url: `${conn.baseUrl()}${DEFAULT_PATH}`,
       body: `{
-            "dataId": "${this.flags.dataid}",
+            "contentVersionId": "${this.flags.contentversionid}",
             "webstoreId": "${webStoreId}"
-          }`,
+      }`,
       headers: {
         key: 'Content-Type',
         type: 'text',

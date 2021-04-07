@@ -1,3 +1,4 @@
+  
 /*
  * Copyright (c) 2020, salesforce.com, inc.
  * All rights reserved.
@@ -13,7 +14,7 @@ const ID_RESP = {
     {
       catalogId: '0ABC012',
       categoriesCreated: 0,
-      dataId: '00CBA321',
+      contentversionid: '00CBA321',
       endTime: 1611937216089,
       entitlementId: '0ABC789',
       numberError: 0,
@@ -69,7 +70,7 @@ describe.skip('1commerce:import:products', () => {
     ])
     .it('runs 1commerce:import:products --targetusername test@org.com --name TestStore', (ctx) => {
       expect(ctx.stdout, ctx.stderr).to.contain(
-        '{"catalogId":"0ABC012","categoriesCreated":0,"dataId":"00CBA321","endTime":1611937216089,"entitlementId":"0ABC789","numberError":0,"numberSuccess":2,"numberToProcess":2,"pricebookId":"0ABC456","productsCreated":0,"productsUpdated":2,"sampleDataEnum":null,"startTime":1611937212942,"startedBy":"00ABCSTME","status":"COMPLETED","webstoreId":"0ABC123"}'
+        '{"catalogId":"0ABC012","categoriesCreated":0,"contentversionid":"00CBA321","endTime":1611937216089,"entitlementId":"0ABC789","numberError":0,"numberSuccess":2,"numberToProcess":2,"pricebookId":"0ABC456","productsCreated":0,"productsUpdated":2,"sampleDataEnum":null,"startTime":1611937212942,"startedBy":"00ABCSTME","status":"COMPLETED","webstoreId":"0ABC123"}'
       );
     });
 });
