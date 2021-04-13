@@ -11,7 +11,8 @@ import { singleRecordQuery } from '../../../shared/queries';
 
 const TOPIC = '1commerce';
 const CMD = `${TOPIC}:import:products`;
-const DEFAULT_PATH = '/commerce/webstores/import';
+const WEBSTORE_ID = '${WEBSTORE_ID}'
+const DEFAULT_PATH = `commerce/management/webstores/${WEBSTORE_ID}/product-import`;
 
 Messages.importMessagesDirectory(__dirname);
 const messages = Messages.loadMessages('@salesforce/plugin-1commerce', TOPIC);
@@ -64,10 +65,9 @@ export class ImportProducts extends SfdxCommand {
 
     const importProductsResults = await conn.request({
       method: 'POST',
-      url: `${conn.baseUrl()}${DEFAULT_PATH}`,
+      url: `${conn.baseUrl()}/${DEFAULT_PATH.replace(WEBSTORE_ID,webStoreId)}`,
       body: `{
-            "contentVersionId": "${this.flags.contentversionid}",
-            "webstoreId": "${webStoreId}"
+            "contentVersionId": "${this.flags.contentversionid}"
       }`,
       headers: {
         key: 'Content-Type',
