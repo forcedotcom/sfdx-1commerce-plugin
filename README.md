@@ -30,6 +30,7 @@ sfdx 1commerce -h
 # Table of Contents
 
 <!-- toc -->
+* [@salesforce/plugin-1commerce](#salesforceplugin-1commerce)
 * [Table of Contents](#table-of-contents)
 * [Usage](#usage)
 * [Commands](#commands)
@@ -40,11 +41,11 @@ sfdx 1commerce -h
 # Usage
 <!-- usage -->
 ```sh-session
-$ npm install -g sfdx-1commerce-plugin
+$ npm install -g @salesforce/plugin-1commerce
 $ sfdx COMMAND
 running command...
 $ sfdx (-v|--version|version)
-sfdx-1commerce-plugin/0.0.5 darwin-x64 node-v14.15.1
+@salesforce/plugin-1commerce/0.0.6 linux-x64 node-v12.18.4
 $ sfdx --help [COMMAND]
 USAGE
   $ sfdx COMMAND
@@ -68,7 +69,7 @@ USAGE
   [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
 
 OPTIONS
-  -d, --dataid=dataid                                                               (required) ID of a file in FFX; CSV
+  -d, --contentversionid=contentversionid                                           (required) ID of a file in FFX; CSV
                                                                                     only for 230; JSON and XML (?)
                                                                                     planned for the future. To be
                                                                                     imported into the store
@@ -98,7 +99,7 @@ EXAMPLE
   $ sfdx 1commerce:import:products -d 00Dxx0000000000 -w 00Dxx0000000000
 ```
 
-_See code: [lib/commands/1commerce/import/products.js](https://github.com/forcedotcom/sfdx-1commerce-plugin/blob/v0.0.5/lib/commands/1commerce/import/products.js)_
+_See code: [src/commands/1commerce/import/products.ts](https://github.com/forcedotcom/sfdx-1commerce-plugin/blob/v0.0.6/src/commands/1commerce/import/products.ts)_
 
 ## `sfdx 1commerce:search:start [-n <string> | -i <string>] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
 
@@ -129,7 +130,7 @@ EXAMPLE
   // Finds a store and indexes it
 ```
 
-_See code: [lib/commands/1commerce/search/start.js](https://github.com/forcedotcom/sfdx-1commerce-plugin/blob/v0.0.5/lib/commands/1commerce/search/start.js)_
+_See code: [src/commands/1commerce/search/start.ts](https://github.com/forcedotcom/sfdx-1commerce-plugin/blob/v0.0.6/src/commands/1commerce/search/start.ts)_
 <!-- commandsstop -->
 <!-- debugging-your-plugin -->
 
