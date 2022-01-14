@@ -1,7 +1,7 @@
 {
   "name": "@salesforce/plugin-1commerce",
   "description": "1Commerce Salesforce CLI Commands",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "author": "Greg Smolyn",
   "bugs": "https://github.com/forcedotcom/sfdx-1commerce-plugin/issues",
   "dependencies": {
