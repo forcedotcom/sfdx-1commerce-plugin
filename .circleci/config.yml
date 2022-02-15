@@ -16,13 +16,13 @@ workflows:
           node_version: latest
       - release-management/test-package:
           name: node-10
-          node_version: "10"
+          node_version: '10'
       - release-management/test-package:
           name: node-12
-          node_version: "12"
+          node_version: '12'
       - release-management/test-package:
           name: node-14
-          node_version: "14"
+          node_version: '14'
       - release-management/release-package:
           github-release: true
           requires:
@@ -33,3 +33,4 @@ workflows:
           filters:
             branches:
               only: main
+          context: AWS
