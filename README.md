@@ -23,35 +23,15 @@ sfdx plugins:install https://github.com/forcedotcom/sfdx-1commerce-plugin
 sfdx 1commerce -h
 ```
 
-## Salesforce Internal Developers
-
-* [See below](#sfdc-internal)
-
 # Table of Contents
 
 <!-- toc -->
 * [@salesforce/plugin-1commerce](#salesforceplugin-1commerce)
 * [Table of Contents](#table-of-contents)
-* [Usage](#usage)
 * [Commands](#commands)
 * [How-to-Contribute](#how-to-contribute)
 <!-- tocstop -->
 <!-- install -->
-
-# Usage
-<!-- usage -->
-```sh-session
-$ npm install -g @salesforce/plugin-1commerce
-$ sfdx COMMAND
-running command...
-$ sfdx (-v|--version|version)
-@salesforce/plugin-1commerce/0.0.7 linux-x64 node-v12.18.4
-$ sfdx --help [COMMAND]
-USAGE
-  $ sfdx COMMAND
-...
-```
-<!-- usagestop -->
 
 # Commands
 
@@ -99,7 +79,7 @@ EXAMPLE
   $ sfdx 1commerce:import:products -d 00Dxx0000000000 -w 00Dxx0000000000
 ```
 
-_See code: [src/commands/1commerce/import/products.ts](https://github.com/forcedotcom/sfdx-1commerce-plugin/blob/v0.0.7/src/commands/1commerce/import/products.ts)_
+_See code: [src/commands/1commerce/import/products.ts](https://github.com/forcedotcom/sfdx-1commerce-plugin/blob/v0.0.10/src/commands/1commerce/import/products.ts)_
 
 ## `sfdx 1commerce:search:start [-n <string> | -i <string>] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
 
@@ -130,12 +110,10 @@ EXAMPLE
   // Finds a store and indexes it
 ```
 
-_See code: [src/commands/1commerce/search/start.ts](https://github.com/forcedotcom/sfdx-1commerce-plugin/blob/v0.0.7/src/commands/1commerce/search/start.ts)_
+_See code: [src/commands/1commerce/search/start.ts](https://github.com/forcedotcom/sfdx-1commerce-plugin/blob/v0.0.10/src/commands/1commerce/search/start.ts)_
 <!-- commandsstop -->
 <!-- debugging-your-plugin -->
 
 # How-to-Contribute
 
-Please submit a PR! 
-
-Information on development can be found here: https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_plugins.meta/sfdx_cli_plugins/cli_plugins.htm
+Please see our [CONTRIBUTING](CONTRIBUTING.md) doc.
