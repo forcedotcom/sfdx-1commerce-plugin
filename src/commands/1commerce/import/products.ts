@@ -67,8 +67,18 @@ export class ImportProducts extends SfdxCommand {
       method: 'POST',
       url: `${conn.baseUrl()}/${DEFAULT_PATH.replace(WEBSTORE_ID,webStoreId)}`,
       body: `{
-          "contentVersionId": "${this.flags.contentversionid}"
-      }`,
+
+        "importConfiguration":{
+        
+        "importSource":{
+        
+        "contentVersionId": "${this.flags.contentversionid}"
+        
+        }
+        
+        }
+        
+        } `,
       headers: {
         key: 'Content-Type',
         type: 'text',
