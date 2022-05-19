@@ -11,7 +11,7 @@ import { singleRecordQuery } from '../../../shared/queries';
 
 const TOPIC = '1commerce';
 const CMD = `${TOPIC}:import:products`;
-const WEBSTORE_ID = '${WEBSTORE_ID}'
+const WEBSTORE_ID = '${WEBSTORE_ID}';
 const DEFAULT_PATH = `commerce/management/webstores/${WEBSTORE_ID}/product-import`;
 
 Messages.importMessagesDirectory(__dirname);
@@ -65,9 +65,13 @@ export class ImportProducts extends SfdxCommand {
 
     const importProductsResults = await conn.request({
       method: 'POST',
-      url: `${conn.baseUrl()}/${DEFAULT_PATH.replace(WEBSTORE_ID,webStoreId)}`,
+      url: `${conn.baseUrl()}/${DEFAULT_PATH.replace(WEBSTORE_ID, webStoreId)}`,
       body: `{
-          "contentVersionId": "${this.flags.contentversionid}"
+        "importConfiguration": {
+          "importSource": {
+            "contentVersionId": "${this.flags.contentversionid}"
+          }
+        }
       }`,
       headers: {
         key: 'Content-Type',
