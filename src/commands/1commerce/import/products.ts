@@ -61,13 +61,18 @@ export class ImportProducts extends SfdxCommand {
       ).Id;
     }
 
+    const baseUrl = conn.baseUrl().replace('v52.0', 'v56.0');
     this.ux.log(`Starting import for WebStore ID: ${webStoreId} to ${conn.baseUrl()}${DEFAULT_PATH}`);
 
     const importProductsResults = await conn.request({
       method: 'POST',
-      url: `${conn.baseUrl()}/${DEFAULT_PATH.replace(WEBSTORE_ID, webStoreId)}`,
+      url: `${baseUrl}/${DEFAULT_PATH.replace(WEBSTORE_ID, webStoreId)}`,
       body: `{
-          "contentVersionId": "${this.flags.contentversionid}"
+        "importConfiguration": {
+          "importSource": {
+            "contentVersionId": "${this.flags.contentversionid}"
+          }
+        }
       }`,
       headers: {
         key: 'Content-Type',
