@@ -1,3 +1,5 @@
+**DEPRECATED: All the functionality has been moved to [commerce-on-ligtning](https://github.com/forcedotcom/commerce-on-lightning) repo.**
+
 # @salesforce/plugin-1commerce
 =====================
 
